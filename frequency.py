@@ -15,6 +15,8 @@ class FrequencyDict:
         # as long as depth is still smaller than the total length, otherwise keep total the actual length of the dict
         if total > depth:
             total = depth
+        if total == 0:
+            return 0
         count = 0
         depthc = 0
         # go through keys
@@ -26,7 +28,6 @@ class FrequencyDict:
             # go through other dict for matches
             if key in otherFD.rawdict:
                 count += 1
-
         return count/total
 
     def printDict(self, top=-1):
